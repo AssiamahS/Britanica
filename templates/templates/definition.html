@@ -1,0 +1,22 @@
+templates/definition.html<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ definition['term'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ definition['term'] }}</h1>
+    <p>{{ definition['definition'] }}</p>
+    <form method="post">
+        <textarea name="comment" placeholder="Add a comment"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment['content'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Index</a>
+</body>
+</html>
