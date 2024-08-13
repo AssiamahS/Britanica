@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Britannia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Britannia</h1>
+    <a href="{{ url_for('add_definition') }}">Add New Definition</a>
+    <ul>
+        {% for definition in definitions %}
+            <li>
+                <a href="{{ url_for('definition', id=definition['id']) }}">{{ definition['term'] }}</a> 
+                <span>Upvotes: {{ definition['upvotes'] }}</span>
+                <a href="{{ url_for('upvote', id=definition['id']) }}">Upvote</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
