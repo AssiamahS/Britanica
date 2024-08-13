@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Definition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add a New Definition</h1>
+    <form method="post">
+        <label for="term">Term:</label>
+        <input type="text" id="term" name="term" required>
+        <label for="definition">Definition:</label>
+        <textarea id="definition" name="definition" required></textarea>
+        <button type="submit">Add Definition</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Index</a>
+</body>
+</html>
